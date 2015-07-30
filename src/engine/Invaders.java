@@ -12,6 +12,7 @@ public class Invaders {
     /**
      * Start running the game
      */
+
     public static void run() {
 
         // Get a list of levels to play
@@ -21,5 +22,7 @@ public class Invaders {
         GameState gameState = new GameState(1, 0, Constants.MAX_LIVES, 0, 0);
         
         // Show Title Screen below this line
+        Screen screen = new TitleScreen();
+        screen.show();
     }
 }
