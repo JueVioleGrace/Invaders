@@ -45,7 +45,8 @@ public class TitleScreen extends Screen {
 	 */
 	public final ScreenType run() {
 		super.run();
-
+		TitleScreen screen = new TitleScreen();
+		screen.show();
 		return this.nextScreenTpe;
 	}
 
