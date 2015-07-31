@@ -79,7 +79,7 @@ public class GameScreen extends Screen {
 		this.nextScreenTpe = ScreenType.ScoreScreen;
 
 		// Make sure the game's state is reset
-		this.gameState.reset();
+		 this.gameState.reset();
 	}
 
 	/**
