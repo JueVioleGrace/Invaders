@@ -26,22 +26,24 @@ public class Invaders {
         screen.show();
 
         ScreenType NextScreenType = screen.getNextScreenType();
-
-        if (NextScreenType == ScreenType.TitleScreen) {
-            screen = new TitleScreen();
-            screen.show();
-        }
-        else if (NextScreenType == ScreenType.GameScreen) {
-            screen = new GameScreen(gameState, levelSettings);
-            screen.show();
-        }
-        else if (NextScreenType == ScreenType.ScoreScreen) {
-            screen = new ScoreScreen(gameState);
-            screen.show();
-        }
-        else if (NextScreenType == ScreenType.ScoreScreen) {
-            screen = new HighScoreScreen();
-            screen.show();
+        while (NextScreenType != ScreenType.EndGame) {
+            if (NextScreenType == ScreenType.TitleScreen) {
+                screen = new TitleScreen();
+                screen.show();
+                NextScreenType = screen.getNextScreenType();
+            } else if (NextScreenType == ScreenType.GameScreen) {
+                screen = new GameScreen(gameState, levelSettings);
+                screen.show();
+                NextScreenType = screen.getNextScreenType();
+            } else if (NextScreenType == ScreenType.ScoreScreen) {
+                screen = new ScoreScreen(gameState);
+                screen.show();
+                NextScreenType = screen.getNextScreenType();
+            } else if (NextScreenType == ScreenType.ScoreScreen) {
+                screen = new HighScoreScreen();
+                screen.show();
+                NextScreenType = screen.getNextScreenType();
+            }
         }
     }
 }
