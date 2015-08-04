@@ -24,5 +24,24 @@ public class Invaders {
         // Show Title Screen below this line
         Screen screen = new TitleScreen();
         screen.show();
+
+        ScreenType NextScreenType = screen.getNextScreenType();
+
+        if (NextScreenType == ScreenType.TitleScreen) {
+            screen = new TitleScreen();
+            screen.show();
+        }
+        else if (NextScreenType == ScreenType.GameScreen) {
+            screen = new GameScreen(gameState, levelSettings);
+            screen.show();
+        }
+        else if (NextScreenType == ScreenType.ScoreScreen) {
+            screen = new ScoreScreen(gameState);
+            screen.show();
+        }
+        else if (NextScreenType == ScreenType.ScoreScreen) {
+            screen = new HighScoreScreen();
+            screen.show();
+        }
     }
 }
